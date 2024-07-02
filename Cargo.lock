@@ -694,9 +694,9 @@ dependencies = [
 
 [[package]]
 name = "bytemuck"
-version = "1.15.0"
+version = "1.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5d6d68c57235a3a081186990eca2867354726650f42f7516ca50c28d6281fd15"
+checksum = "b236fc92302c97ed75b38da1f4917b5cdda4984745740f153a5d3059e48d725e"
 dependencies = [
  "bytemuck_derive",
 ]
@@ -1320,30 +1320,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1435fa1053d8b2fbbe9be7e97eca7f33d37b28409959813daefc1446a14247f1"
 
 [[package]]
-name = "drillx"
-version = "0.2.0"
-dependencies = [
- "blake3",
- "cc",
- "criterion",
- "equix",
- "solana-program",
- "strum 0.26.2",
-]
-
-[[package]]
-name = "drillx-program"
-version = "0.1.0"
-dependencies = [
- "bytemuck",
- "drillx",
- "solana-program",
- "solana-program-test",
- "solana-sdk",
- "tokio",
-]
-
-[[package]]
 name = "dynasm"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1498,9 +1474,9 @@ checksum = "5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5"
 
 [[package]]
 name = "equix"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1e25ed202554ac3bf3c8e5fab352947cc9b5c592e219185351d50fedf2b4213a"
+checksum = "ced5aa2974d730a3bbe65dcb62ad8fbb0ae44d4aeed1093808a855d922b931ee"
 dependencies = [
  "arrayvec",
  "hashx",
@@ -1529,21 +1505,21 @@ checksum = "0206175f82b8d6bf6652ff7d71a1e27fd2e4efde587fd368662814d6ec1d9ce0"
 name = "example-1"
 version = "0.1.0"
 dependencies = [
- "drillx",
+ "marsh-drillx",
 ]
 
 [[package]]
 name = "example-2"
 version = "0.1.0"
 dependencies = [
- "drillx",
+ "marsh-drillx",
 ]
 
 [[package]]
 name = "example-3"
 version = "0.1.0"
 dependencies = [
- "drillx",
+ "marsh-drillx",
 ]
 
 [[package]]
@@ -2313,6 +2289,30 @@ checksum = "57d27b317e207b10f69f5e75494119e391a96f48861ae870d1da6edac98ca900"
 dependencies = [
  "cc",
  "libc",
+]
+
+[[package]]
+name = "marsh-drillx"
+version = "0.2.0"
+dependencies = [
+ "blake3",
+ "cc",
+ "criterion",
+ "equix",
+ "solana-program",
+ "strum 0.26.2",
+]
+
+[[package]]
+name = "marsh-drillx-program"
+version = "0.1.0"
+dependencies = [
+ "bytemuck",
+ "marsh-drillx",
+ "solana-program",
+ "solana-program-test",
+ "solana-sdk",
+ "tokio",
 ]
 
 [[package]]

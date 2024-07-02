@@ -1,5 +1,5 @@
 [package]
-name = "drillx-program"
+name = "marsh-drillx-program"
 version = "0.1.0"
 edition = "2021"
 
@@ -13,7 +13,7 @@ default = []
 
 [dependencies]
 bytemuck = { workspace = true }
-drillx = { path = "../drillx", features = ["solana"] }
+drillx = { path = "../drillx", package = "marsh-drillx", features = ["solana"] }
 solana-program = { workspace = true }
 
 [dev-dependencies]

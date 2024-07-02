@@ -8,9 +8,9 @@ members = [
 
 [workspace.dependencies]
 blake3 = "1.5"
-bytemuck = "1.15.0"
+bytemuck = "1.16.1"
 criterion = { version = "0.5", features = ["html_reports"] }
-equix = "0.1.4"
+equix = "0.1.5"
 solana-program = "1.18.11"
 solana-program-test = "1.18.11"
 solana-sdk = "1.18.11"
