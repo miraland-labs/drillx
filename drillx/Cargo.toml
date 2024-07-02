@@ -1,14 +1,14 @@
 [package]
-name = "drillx"
+name = "marsh-drillx"
 version = "0.2.0"
-description = "Drillx is a proof-of-work algorithm for Ore cryptocurrency mining."
+description = "Drillx is a proof-of-work algorithm for Mars(h) mining mission."
 edition = "2021"
 license = "Apache-2.0"
-homepage = "https://ore.supply"
-documentation = "https://ore.supply"
-repository = "https://github.com/hardhatchad/drillx"
-readme = "../README.md"
-keywords = ["solana", "crypto", "mining"]
+homepage = "https://miraland.io/marsh"
+documentation = "https://miraland.io/marsh"
+repository = "https://github.com/miraland-labs/drillx"
+readme = "./README.md"
+keywords = ["solana", "crypto", "miraland", "mars", "marsh"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
