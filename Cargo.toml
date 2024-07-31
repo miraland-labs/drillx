@@ -3,7 +3,7 @@ resolver = "2"
 members = ["drillx", "examples/*", "program"]
 
 [workspace.package]
-version = "2.0.0-rc3"
+version = "1.0.0"
 edition = "2021"
 license = "Apache-2.0"
 homepage = "https://miraland.io/marsh"
@@ -14,7 +14,7 @@ keywords = ["solana", "crypto", "miraland", "mars", "marsh"]
 
 [workspace.dependencies]
 blake3 = "1.5"
-bytemuck = { version  = "1.16", features = ["derive"] }
+bytemuck = { version = "1.16", features = ["derive"] }
 criterion = { version = "0.5", features = ["html_reports"] }
 equix = "0.1.5"
 serde = { version = "1.0", features = ["derive"] }
