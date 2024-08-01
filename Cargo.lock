@@ -1503,21 +1503,21 @@ checksum = "0206175f82b8d6bf6652ff7d71a1e27fd2e4efde587fd368662814d6ec1d9ce0"
 
 [[package]]
 name = "example-1"
-version = "1.0.0"
+version = "2.0.0"
 dependencies = [
  "marsh-drillx",
 ]
 
 [[package]]
 name = "example-2"
-version = "1.0.0"
+version = "2.0.0"
 dependencies = [
  "marsh-drillx",
 ]
 
 [[package]]
 name = "example-3"
-version = "1.0.0"
+version = "2.0.0"
 dependencies = [
  "marsh-drillx",
 ]
@@ -2293,20 +2293,20 @@ dependencies = [
 
 [[package]]
 name = "marsh-drillx"
-version = "1.0.0"
+version = "2.0.0"
 dependencies = [
- "blake3",
  "cc",
  "criterion",
  "equix",
  "serde",
+ "sha3 0.10.8",
  "solana-program",
  "strum 0.26.2",
 ]
 
 [[package]]
 name = "marsh-drillx-program"
-version = "1.0.0"
+version = "2.0.0"
 dependencies = [
  "bytemuck",
  "marsh-drillx",
