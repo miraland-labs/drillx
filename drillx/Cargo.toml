@@ -1,6 +1,6 @@
 [package]
 name = "marsh-drillx"
-description = "Drillx is a proof-of-work algorithm for Mars(h) mining mission. Fork of regolith-labs/drillx"
+description = "Drillx is a proof-of-work algorithm for Marsh mining mission. Fork of regolith-labs/drillx"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
@@ -22,7 +22,8 @@ solana = ["solana-program"]
 gpu = ["cc"]
 
 [dependencies]
-blake3 = { workspace = true }
+# blake3 = { workspace = true }
+sha3 = { workspace = true }
 equix = { workspace = true }
 serde = { workspace = true }
 solana-program = { workspace = true, optional = true }
