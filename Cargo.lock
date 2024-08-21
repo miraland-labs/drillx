@@ -1503,21 +1503,21 @@ checksum = "0206175f82b8d6bf6652ff7d71a1e27fd2e4efde587fd368662814d6ec1d9ce0"
 
 [[package]]
 name = "example-1"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
  "marsh-drillx",
 ]
 
 [[package]]
 name = "example-2"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
  "marsh-drillx",
 ]
 
 [[package]]
 name = "example-3"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
  "marsh-drillx",
 ]
@@ -2293,7 +2293,7 @@ dependencies = [
 
 [[package]]
 name = "marsh-drillx"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
  "cc",
  "criterion",
@@ -2306,7 +2306,7 @@ dependencies = [
 
 [[package]]
 name = "marsh-drillx-program"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
  "bytemuck",
  "marsh-drillx",

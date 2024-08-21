@@ -1,4 +1,5 @@
 pub use equix;
+use equix::SolutionArray;
 pub use serde::{Deserialize, Serialize};
 #[cfg(not(feature = "solana"))]
 use sha3::Digest;
@@ -11,6 +12,28 @@ pub fn hash(challenge: &[u8; 32], nonce: &[u8; 8]) -> Result<Hash, DrillxError> 
         d: digest,
         h: hashv(&digest, nonce),
     })
+}
+
+// MI, from Kriptikz
+/// Generates drillx hashes from a challenge and nonce using pre-allocated memory.
+#[inline(always)]
+pub fn get_hashes_with_memory(
+    memory: &mut equix::SolverMemory,
+    challenge: &[u8; 32],
+    nonce: &[u8; 8],
+) -> Vec<Hash> {
+    let mut hashes: Vec<Hash> = Vec::with_capacity(7);
+    if let Ok(solutions) = get_digests_with_memory(memory, challenge, nonce) {
+        for solution in solutions {
+            let digest = solution.to_bytes();
+            hashes.push(Hash {
+                d: digest,
+                h: hashv(&digest, nonce),
+            });
+        }
+    }
+
+    hashes
 }
 
 /// Generates a new drillx hash from a challenge and nonce using pre-allocated memory.
@@ -68,6 +91,22 @@ fn digest_with_memory(
     // SAFETY: The equix solver guarantees that the first solution is always valid
     let solution = unsafe { solutions.get_unchecked(0) };
     Ok(solution.to_bytes())
+}
+
+// MI, from Kriptikz
+/// Constructs a keccak digest from a challenge and nonce using equix hashes and pre-allocated memory.
+#[inline(always)]
+fn get_digests_with_memory(
+    memory: &mut equix::SolverMemory,
+    challenge: &[u8; 32],
+    nonce: &[u8; 8],
+) -> Result<SolutionArray, DrillxError> {
+    let seed = seed(challenge, nonce);
+    let equix = equix::EquiXBuilder::new()
+        .runtime(equix::RuntimeOption::TryCompile)
+        .build(&seed)
+        .map_err(|_| DrillxError::BadEquix)?;
+    Ok(equix.solve_with_memory(memory))
 }
 
 /// Sorts the provided digest as a list of u16 values.
@@ -162,6 +201,21 @@ impl Solution {
             d: self.d,
             h: hashv(&mut d, &self.n),
         }
+    }
+
+    pub fn from_bytes(bytes: [u8; 24]) -> Self {
+        let mut d = [0u8; 16];
+        let mut n = [0u8; 8];
+        d.copy_from_slice(&bytes[..16]);
+        n.copy_from_slice(&bytes[16..]);
+        Solution { d, n }
+    }
+
+    pub fn to_bytes(&self) -> [u8; 24] {
+        let mut bytes = [0; 24];
+        bytes[..16].copy_from_slice(&self.d);
+        bytes[16..].copy_from_slice(&self.n);
+        bytes
     }
 }
 
