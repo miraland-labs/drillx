@@ -10,7 +10,7 @@ use solana_sdk::{
 #[tokio::test]
 async fn test_initialize() {
     // Setup
-    let (mut banks, payer, blockhash) = setup_program_test_env().await;
+    let (banks, payer, blockhash) = setup_program_test_env().await;
 
     // Hash
     let challenge = [255; 32];

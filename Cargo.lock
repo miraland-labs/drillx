@@ -1459,21 +1459,21 @@ dependencies = [
 
 [[package]]
 name = "example-1"
-version = "2.1.0"
+version = "2.2.0"
 dependencies = [
  "marsh-drillx",
 ]
 
 [[package]]
 name = "example-2"
-version = "2.1.0"
+version = "2.2.0"
 dependencies = [
  "marsh-drillx",
 ]
 
 [[package]]
 name = "example-3"
-version = "2.1.0"
+version = "2.2.0"
 dependencies = [
  "marsh-drillx",
 ]
@@ -2319,7 +2319,7 @@ dependencies = [
 
 [[package]]
 name = "marsh-drillx"
-version = "2.1.0"
+version = "2.2.0"
 dependencies = [
  "cc",
  "criterion",
@@ -2332,7 +2332,7 @@ dependencies = [
 
 [[package]]
 name = "marsh-drillx-program"
-version = "2.1.0"
+version = "2.2.0"
 dependencies = [
  "bytemuck",
  "marsh-drillx",
